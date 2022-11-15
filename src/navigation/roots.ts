@@ -2,8 +2,6 @@ import {Pages} from "./pages";
 import {Navigation} from "react-native-navigation";
 import {Tabs} from "./tabs";
 import {localization} from "../common/localization/localization";
-import {SFSymbols} from "../../resources/symbols/SFSymbols";
-import {getPlatformTabsIcon} from "./helpers/navigationIconHelpers";
 
 export function setStorybookRoot() {
   Navigation.setRoot({
@@ -40,6 +38,22 @@ export function setInitialRoot() {
   });
 }
 
+export function setLoginRoot() {
+  Navigation.setRoot({
+    root: {
+      component: {
+        name: Pages.login.name,
+        id: Pages.login.id,
+        options: {
+          topBar: {
+            visible: false,
+          },
+        },
+      },
+    },
+  });
+}
+
 export function setOnboardingRoot() {
   Navigation.setRoot({
     root: {
@@ -59,28 +73,15 @@ export function setOnboardingRoot() {
 export function setTabsRoot(callback?: () => void) {
   Navigation.setRoot({
     root: {
-      bottomTabs: {
-        id: Pages.tabs.id,
+      stack: {
+        id: Tabs.main.id,
         children: [
-          {
-            stack: {
-              id: Tabs.main.id,
-              children: [
-                {
-                  component: {
-                    id: Pages.main.id,
-                    name: Pages.main.name,
-                  },
-                },
-              ],
-              options: {
-                bottomTab: {
-                  text: localization.pages.main,
-                  ...getPlatformTabsIcon(SFSymbols["house"], SFSymbols["house.fill"], "home"),
-                },
+            {
+              component: {
+                id: Pages.main.id,
+                name: Pages.main.name,
               },
             },
-          },
         ],
       },
     },

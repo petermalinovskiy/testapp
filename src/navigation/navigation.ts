@@ -1,6 +1,8 @@
 import {Navigation} from "react-native-navigation";
 import {Pages} from "./pages";
 import {Main} from "../modules/main/Main";
+import {Login} from "../modules/login/Login";
+import {Cafe} from "../modules/cafe/Cafe";
 import {gestureHandlerRootHOC} from "react-native-gesture-handler";
 import {Splash} from "../modules/splash/Splash";
 import {reduxProvider} from "../core/store/store";
@@ -44,4 +46,6 @@ export function registerComponents() {
   Navigation.registerComponent(Pages.main.name, () => Main);
   Navigation.registerComponent(Pages.toast.name, () => ToastOverlay);
   Navigation.registerComponent(Pages.datePicker.name, () => DatePickerOverlay);
+  Navigation.registerComponent(Pages.login.name, () => Login);
+  Navigation.registerComponent(Pages.cafe.name, () => Cafe);
 }

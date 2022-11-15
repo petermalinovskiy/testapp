@@ -30,5 +30,9 @@ export const Pages = {
   login: {
     id: "LOGIN_SCREEN",
     name: "LoginScreen"
+  },
+  cafe: {
+    id: "CAFE_SCREEN",
+    name: "CafeScreen"
   }
 };

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {NavigationFunctionComponent} from "react-native-navigation";
-import {setOnboardingRoot, setTabsRoot} from "../../navigation/roots";
+import {setLoginRoot, setOnboardingRoot, setTabsRoot} from "../../navigation/roots";
 import {useAppSelector} from "../../core/store/store";
 import {LoadingComponent} from "../../common/components/LoadingComponent";
 import {isIos} from "../../core/theme/commonConsts";
@@ -11,7 +11,7 @@ export const Splash: NavigationFunctionComponent = () => {
 
   useEffect(() => {
     if (isOnboardingVisited) {
-      setTabsRoot();
+      setLoginRoot();
     } else if (isIos) {
       setTabsRoot(showOnboarding);
     } else {

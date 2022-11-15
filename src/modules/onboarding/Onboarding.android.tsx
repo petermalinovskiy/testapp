@@ -9,7 +9,7 @@ import {CommonStyles} from "../../core/theme/commonStyles";
 import {CommonSizes} from "../../core/theme/commonSizes";
 import {Fonts} from "../../core/theme/fonts";
 import {PrimaryButton} from "../../common/components/PrimaryButton";
-import {setTabsRoot} from "../../navigation/roots";
+import {setLoginRoot} from "../../navigation/roots";
 import {platformNativeColor} from "../../common/helpers/colorHelpers";
 import {PlatformColorsAndroid} from "../../core/theme/colors";
 import {isTablet} from "../../core/theme/commonConsts";
@@ -71,7 +71,7 @@ export const Onboarding: NavigationFunctionComponent = () => {
   );
 
   const onContinuePress = useCallback(() => {
-    setTabsRoot();
+    setLoginRoot();
   }, []);
 
   return (

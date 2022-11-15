@@ -1,11 +1,27 @@
 import {NavigationFunctionComponent} from "react-native-navigation";
-import {ScrollView} from "react-native";
+import {View, Button, StyleSheet} from "react-native";
 import React from "react";
 import {localization} from "../../common/localization/localization";
-import {CommonStyles} from "../../core/theme/commonStyles";
+import { Navigation } from 'react-native-navigation';
 
-export const Main: NavigationFunctionComponent = (): JSX.Element => {
-  return <ScrollView testID={"MainPageID"} contentInsetAdjustmentBehavior={"automatic"} style={CommonStyles.flex1} />;
+export const Main: NavigationFunctionComponent = (props): JSX.Element => {
+  return <View style={styles.root}>
+    <Button
+        title='Push Cafe Screen'
+        color='#710ce3'
+        onPress={() => Navigation.push(props.componentId, {
+          component: {
+            name: 'CafeScreen',
+            options: {
+              topBar: {
+                title: {
+                  text: 'Cafe'
+                }
+              }
+            }
+          }
+        })}/>
+  </View>;
 };
 
 Main.options = {
@@ -18,3 +34,12 @@ Main.options = {
     },
   },
 };
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'whitesmoke'
+  }
+});
