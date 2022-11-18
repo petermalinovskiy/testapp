@@ -1,15 +1,14 @@
-import { NavigationFunctionComponent} from "react-native-navigation";
+import {NavigationFunctionComponent} from "react-native-navigation";
 import {TextInput, StyleSheet, View, Text, ImageBackground} from "react-native";
-import React from "react";
-import { useForm, Controller } from "react-hook-form";
-import {setTabsRoot} from "../../navigation/roots";
+import React, {useCallback} from "react";
+import {useForm, Controller} from "react-hook-form";
 import {Colors} from "../../core/theme/colors";
 import {PrimaryButton} from "../../common/components/PrimaryButton";
 import {ButtonType} from "../../types";
 import {CommonStyles} from "../../core/theme/commonStyles";
 
 export const Login: NavigationFunctionComponent = (props): JSX.Element => {
-    const { control, watch, formState: { errors } } = useForm({
+    const {control, watch, formState: {errors}} = useForm({
         defaultValues: {
             login: '',
             password: ''
@@ -22,29 +21,46 @@ export const Login: NavigationFunctionComponent = (props): JSX.Element => {
     };
 
 
-    const authorizationURL  = "http://ci2.dextechnology.com:8000/api/User/Authorization";
-    const authorization = (url: string) => {
-        return fetch(url, {
+    const authorization = async () => {
+        console.log('user111',JSON.stringify(user));
+
+        return fetch('http://ci2.dextechnology.com:8000/api/User/Authorization',{
             method: "POST",
             headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Accept': 'application/json'
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(user),
         })
-            .then((r) => console.log(r.status))
-            .catch(function(error) {
-                console.log(error);
+            .then((r) => console.log(r))
+            .catch(  (error) => {
+                console.log('error',error);
             });
     };
 
-    const getAuthorized = () => authorization(authorizationURL).then((data) => (console.log(data)));
+    const onr = () => {authorization()}
+    // var request = new XMLHttpRequest();
+    // request.onreadystatechange = (e) => {
+    //     if (request.readyState !== 4) {
+    //         return;
+    //     }
+    //
+    //     if (request.status === 200) {
+    //         console.log('success', request.responseText);
+    //     } else {
+    //         console.warn('error', request);
+    //     }
+    // };
+    //
+    // request.open('POST', 'http://ci2.dextechnology.com:8000/api/User/Authorization/',);
+    // request.setRequestHeader("Content-Type","application/json")
+    // request.send(JSON.stringify(user));
 
-    const authorizeHandler = () => getAuthorized();
 
     return (
         <View style={CommonStyles.flex1}>
-            <ImageBackground source={require('../../../resources/images/bg_image.png')} resizeMode='cover' style={CommonStyles.flex1}>
+            <ImageBackground source={require('../../../resources/images/bg_image.png')} resizeMode='cover'
+                             style={CommonStyles.flex1}>
                 <View style={styles.root}>
                     <Text style={CommonStyles.logo}>CoffeTime</Text>
                     <View>
@@ -53,7 +69,7 @@ export const Login: NavigationFunctionComponent = (props): JSX.Element => {
                             rules={{
                                 required: true,
                             }}
-                            render={({ field: { onChange, onBlur, value } }) => (
+                            render={({field: {onChange, onBlur, value}}) => (
                                 <TextInput
                                     onBlur={onBlur}
                                     onChangeText={onChange}
@@ -72,7 +88,7 @@ export const Login: NavigationFunctionComponent = (props): JSX.Element => {
                             rules={{
                                 required: true,
                             }}
-                            render={({ field: { onChange, onBlur, value } }) => (
+                            render={({field: {onChange, onBlur, value}}) => (
                                 <TextInput
                                     onBlur={onBlur}
                                     onChangeText={onChange}
@@ -88,8 +104,8 @@ export const Login: NavigationFunctionComponent = (props): JSX.Element => {
 
                         <PrimaryButton
                             label='Войти'
+                            onPress={onr}
                             type={ButtonType.solid}
-                            onPress={() => setTabsRoot()}
                             style={CommonStyles.button}
                         />
                     </View>

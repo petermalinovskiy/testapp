@@ -11,23 +11,20 @@ export interface LoginRequest {
 
 export const api = createApi({
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://ci2.dextechnology.com:8000/api/User/Authorization',
+        baseUrl: 'http://ci2.dextechnology.com:8000/api/',
         prepareHeaders: (headers, { getState }) => {
             return headers;
         },
     }),
     endpoints: (builder) => ({
-        login: builder.mutation<UserResponse, LoginRequest>({
+        login: builder.query<UserResponse, LoginRequest>({
             query: (credentials) => ({
-                url: 'http://ci2.dextechnology.com:8000/api/User/Authorization',
+                url: '/User/Authorization',
                 method: 'POST',
                 body: credentials,
             }),
         }),
-        protected: builder.mutation<{ message: string }, void>({
-            query: () => 'protected',
-        }),
     }),
 });
 
-export const { useLoginMutation, useProtectedMutation } = api;
+export const { useLoginQuery } = api;

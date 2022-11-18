@@ -60,21 +60,7 @@ export function setAuthorizationRoot() {
   });
 }
 
-export function setOnboardingRoot() {
-  Navigation.setRoot({
-    root: {
-      component: {
-        name: Pages.onboarding.name,
-        id: Pages.onboarding.id,
-        options: {
-          topBar: {
-            visible: true,
-          },
-        },
-      },
-    },
-  });
-}
+
 
 export function setTabsRoot(callback?: () => void) {
   Navigation.setRoot({

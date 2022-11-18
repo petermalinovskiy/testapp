@@ -11,7 +11,6 @@ import {PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme/colors";
 import {platformNativeColor} from "../common/helpers/colorHelpers";
 import {ToastOverlay} from "../common/components/ToastOverlay";
 import {DatePickerOverlay} from "../common/components/DatePickerOverlay";
-import {Onboarding} from "../modules/onboarding/Onboarding";
 import {Authorization} from "../modules/authorization/Authorization";
 import {Registration} from "../modules/registration/Registration";
 import {Favorite} from "../modules/favorite/Favorite";
@@ -45,7 +44,6 @@ export function registerComponents() {
     () => gestureHandlerRootHOC(reduxProvider(Splash)),
     () => Splash,
   );
-  Navigation.registerComponent(Pages.onboarding.name, () => Onboarding);
   Navigation.registerComponent(Pages.main.name, () => Main);
   Navigation.registerComponent(Pages.toast.name, () => ToastOverlay);
   Navigation.registerComponent(Pages.datePicker.name, () => DatePickerOverlay);

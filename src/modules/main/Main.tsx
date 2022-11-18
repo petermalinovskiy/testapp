@@ -4,6 +4,8 @@ import React from "react";
 import {localization} from "../../common/localization/localization";
 import { Navigation } from 'react-native-navigation';
 import {NoList} from "../../common/components/NoList";
+import {RightButton} from "../rightButton/RightButton";
+
 
 export const Main: NavigationFunctionComponent = (props): JSX.Element => {
   return <SafeAreaView style={styles.root}>
@@ -15,7 +17,7 @@ export const Main: NavigationFunctionComponent = (props): JSX.Element => {
 Main.options = {
   topBar: {
     largeTitle: {
-      visible: false,
+      visible: true,
     },
     title: {
       text: localization.pages.main,

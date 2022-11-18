@@ -7,10 +7,6 @@ export const Pages = {
     id: "SPLASH_SCREEN",
     name: "SplashScreen",
   },
-  onboarding: {
-    id: "ONBOARDING_SCREEN",
-    name: "OnboardingScreen",
-  },
   toast: {
     id: "TOAST",
     name: "ToastOverlay",
@@ -46,5 +42,5 @@ export const Pages = {
   favorite: {
     id: "FAVOTITE_SCREEN",
     name: "FavoriteScreen"
-  }
+  },
 };
