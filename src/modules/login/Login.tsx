@@ -89,7 +89,7 @@ export const Login: NavigationFunctionComponent = (props): JSX.Element => {
                         <PrimaryButton
                             label='Войти'
                             type={ButtonType.solid}
-                            onPress={() => authorizeHandler()}
+                            onPress={() => setTabsRoot()}
                             style={CommonStyles.button}
                         />
                     </View>

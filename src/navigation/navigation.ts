@@ -14,6 +14,7 @@ import {DatePickerOverlay} from "../common/components/DatePickerOverlay";
 import {Onboarding} from "../modules/onboarding/Onboarding";
 import {Authorization} from "../modules/authorization/Authorization";
 import {Registration} from "../modules/registration/Registration";
+import {Favorite} from "../modules/favorite/Favorite";
 
 const StorybookUIRoot = getStorybookUI({
   asyncStorage: null,
@@ -52,4 +53,5 @@ export function registerComponents() {
   Navigation.registerComponent(Pages.login.name, () => Login);
   Navigation.registerComponent(Pages.registration.name, () => Registration);
   Navigation.registerComponent(Pages.cafe.name, () => Cafe);
+  Navigation.registerComponent(Pages.favorite.name, () => Favorite);
 }

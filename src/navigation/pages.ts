@@ -42,5 +42,9 @@ export const Pages = {
   cafe: {
     id: "CAFE_SCREEN",
     name: "CafeScreen"
+  },
+  favorite: {
+    id: "FAVOTITE_SCREEN",
+    name: "FavoriteScreen"
   }
 };
