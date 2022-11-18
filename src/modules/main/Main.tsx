@@ -3,13 +3,13 @@ import {View, StyleSheet, SafeAreaView} from "react-native";
 import React from "react";
 import {localization} from "../../common/localization/localization";
 import { Navigation } from 'react-native-navigation';
+import {NoList} from "../../common/components/NoList";
 
 export const Main: NavigationFunctionComponent = (props): JSX.Element => {
-  return <View style={styles.root}>
-    <SafeAreaView>
-
+  return <SafeAreaView style={styles.root}>
+      <NoList/>
     </SafeAreaView>
-  </View>;
+
 };
 
 Main.options = {
