@@ -1,12 +1,16 @@
 import {Platform, StyleSheet, TextStyle, ViewStyle} from "react-native";
 import {Fonts} from "./fonts";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "./colors";
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "./colors";
 import {CommonSizes} from "./commonSizes";
 import {platformNativeColor} from "../../common/helpers/colorHelpers";
 
 export const CommonStyles = StyleSheet.create({
   flex1: {
     flex: 1,
+  } as ViewStyle,
+  flex1SpaceAround: {
+    flex: 1,
+    justifyContent: "space-around"
   } as ViewStyle,
   flex1Padding: {
     flex: 1,
@@ -56,4 +60,36 @@ export const CommonStyles = StyleSheet.create({
     lineHeight: CommonSizes.lineHeight.medium,
     color: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.primaryText),
   } as TextStyle,
+  logo: {
+    fontFamily: Fonts.lobster,
+    fontSize: CommonSizes.font.extraLargePlus,
+    lineHeight: CommonSizes.lineHeight.extraLargePlus,
+    color: Colors.white,
+  } as TextStyle,
+  button: {
+    backgroundColor: Colors.blue,
+    width: 300,
+    height: 50,
+    borderRadius: 25,
+    marginTop: 30,
+    alignSelf: 'center',
+  },
+  greenButton: {
+    width: 300,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: Colors.green,
+    marginTop: 30,
+    alignSelf: 'center',
+  },
+  textInput: {
+    height: 50,
+    padding: 10,
+    borderBottomWidth: 1,
+    color: Colors.white,
+    borderColor: Colors.white,
+    minWidth: "80%",
+    alignSelf: 'center',
+    textAlign: 'center',
+  },
 });

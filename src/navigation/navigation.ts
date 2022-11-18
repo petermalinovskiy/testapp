@@ -12,6 +12,8 @@ import {platformNativeColor} from "../common/helpers/colorHelpers";
 import {ToastOverlay} from "../common/components/ToastOverlay";
 import {DatePickerOverlay} from "../common/components/DatePickerOverlay";
 import {Onboarding} from "../modules/onboarding/Onboarding";
+import {Authorization} from "../modules/authorization/Authorization";
+import {Registration} from "../modules/registration/Registration";
 
 const StorybookUIRoot = getStorybookUI({
   asyncStorage: null,
@@ -46,6 +48,8 @@ export function registerComponents() {
   Navigation.registerComponent(Pages.main.name, () => Main);
   Navigation.registerComponent(Pages.toast.name, () => ToastOverlay);
   Navigation.registerComponent(Pages.datePicker.name, () => DatePickerOverlay);
+  Navigation.registerComponent(Pages.authorization.name, () => Authorization);
   Navigation.registerComponent(Pages.login.name, () => Login);
+  Navigation.registerComponent(Pages.registration.name, () => Registration);
   Navigation.registerComponent(Pages.cafe.name, () => Cafe);
 }

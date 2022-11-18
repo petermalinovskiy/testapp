@@ -1,26 +1,14 @@
 import {NavigationFunctionComponent} from "react-native-navigation";
-import {View, Button, StyleSheet} from "react-native";
+import {View, StyleSheet, SafeAreaView} from "react-native";
 import React from "react";
 import {localization} from "../../common/localization/localization";
 import { Navigation } from 'react-native-navigation';
 
 export const Main: NavigationFunctionComponent = (props): JSX.Element => {
   return <View style={styles.root}>
-    <Button
-        title='Push Cafe Screen'
-        color='#710ce3'
-        onPress={() => Navigation.push(props.componentId, {
-          component: {
-            name: 'CafeScreen',
-            options: {
-              topBar: {
-                title: {
-                  text: 'Cafe'
-                }
-              }
-            }
-          }
-        })}/>
+    <SafeAreaView>
+
+    </SafeAreaView>
   </View>;
 };
 

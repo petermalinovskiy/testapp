@@ -38,17 +38,23 @@ export function setInitialRoot() {
   });
 }
 
-export function setLoginRoot() {
+export function setAuthorizationRoot() {
   Navigation.setRoot({
     root: {
-      component: {
-        name: Pages.login.name,
-        id: Pages.login.id,
-        options: {
-          topBar: {
-            visible: false,
+      stack: {
+        children: [
+          {
+            component: {
+              name: Pages.authorization.name,
+              id: Pages.authorization.id,
+              options: {
+                topBar: {
+                  visible: false,
+                },
+              },
+            },
           },
-        },
+        ],
       },
     },
   });

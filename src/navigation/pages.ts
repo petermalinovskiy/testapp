@@ -27,9 +27,17 @@ export const Pages = {
     id: "MAIN_SCREEN",
     name: "MainScreen",
   },
+  authorization: {
+    id: "AUTHORIZATION_SCREEN",
+    name: "AuthorizationScreen"
+  },
   login: {
     id: "LOGIN_SCREEN",
     name: "LoginScreen"
+  },
+  registration: {
+    id: "REGISTRATION_SCREEN",
+    name: "RegistrationScreen"
   },
   cafe: {
     id: "CAFE_SCREEN",
